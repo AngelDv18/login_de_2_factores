@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="login2fa.Views.PerfilPage"
+             Title="Mi Perfil"
+             BackgroundColor="#F8F9FA">
+
+    <ScrollView>
+        <StackLayout Padding="30,20" Spacing="25">
+
+            <!-- Cabecera del perfil -->
+            <Frame BackgroundColor="White"
+                   CornerRadius="20"
+                   HasShadow="True"
+                   Padding="30,35"
+                   Margin="0,10">
+
+                <StackLayout Spacing="20">
+
+                    <!-- Avatar y bienvenida -->
+                    <StackLayout Spacing="15">
+                        <!-- Avatar circular -->
+                        <Frame BackgroundColor="#3498DB"
+                               CornerRadius="60"
+                               WidthRequest="120"
+                               HeightRequest="120"
+                               HorizontalOptions="Center"
+                               HasShadow="True"
+                               BorderColor="#2980B9"                             
+                               Margin="0,0,0,10">
+                            <Label Text="👤"
+                                   FontSize="60"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+                        </Frame>
+
+                        <!-- Mensaje de bienvenida personalizado -->
+                        <StackLayout Spacing="8">
+                            <Label Text="¡Bienvenido de vuelta!" 
+                                   FontSize="24" 
+                                   FontAttributes="Bold"
+                                   TextColor="#2C3E50"
+                                   HorizontalOptions="Center" />
+                            <Label Text="Tu perfil está completo y verificado" 
+                                   FontSize="16"
+                                   TextColor="#7F8C8D"
+                                   HorizontalOptions="Center" />
+                        </StackLayout>
+                    </StackLayout>
+
+                </StackLayout>
+
+            </Frame>
+
+            <!-- Información del usuario -->
+            <Frame BackgroundColor="White"
+                   CornerRadius="20"
+                   HasShadow="True"
+                   Padding="25"
+                   Margin="0,5">
+
+                <StackLayout Spacing="20">
+
+                    <!-- Título de sección -->
+                    <Label Text="Información Personal" 
+                           FontSize="20" 
+                           FontAttributes="Bold"
+                           TextColor="#34495E"
+                           Margin="0,0,0,10" />
+
+                    <!-- Campo Nombre Completo -->
+                    <StackLayout Spacing="8">
+                        <Label Text="Nombre completo" 
+                               FontSize="14" 
+                               FontAttributes="Bold"
+                               TextColor="#7F8C8D" />
+                        <Frame BackgroundColor="#F8F9FA"
+                               CornerRadius="12"
+                               Padding="18,15"
+                               HasShadow="False"
+                               BorderColor="Transparent">
+                            <Label Text="{Binding NombreCompleto}"
+                                   FontSize="16"
+                                   TextColor="#2C3E50"
+                                   FontAttributes="Bold" />
+                        </Frame>
+                    </StackLayout>
+
+                    <!-- Campo Email -->
+                    <StackLayout Spacing="8">
+                        <Label Text="Correo electrónico" 
+                               FontSize="14" 
+                               FontAttributes="Bold"
+                               TextColor="#7F8C8D" />
+                        <Frame BackgroundColor="#F8F9FA"
+                               CornerRadius="12"
+                               Padding="18,15"
+                               HasShadow="False"
+                               BorderColor="Transparent">
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Label Text="📧"
+                                       FontSize="16"
+                                       VerticalOptions="Center" />
+                                <Label Text="{Binding Email}"
+                                       FontSize="16"
+                                       TextColor="#2C3E50"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="FillAndExpand" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+
+                    <!-- Campo Teléfono -->
+                    <StackLayout Spacing="8">
+                        <Label Text="Número de teléfono" 
+                               FontSize="14" 
+                               FontAttributes="Bold"
+                               TextColor="#7F8C8D" />
+                        <Frame BackgroundColor="#F8F9FA"
+                               CornerRadius="12"
+                               Padding="18,15"
+                               HasShadow="False"
+                               BorderColor="Transparent">
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Label Text="📱"
+                                       FontSize="16"
+                                       VerticalOptions="Center" />
+                                <Label Text="{Binding Telefono}"
+                                       FontSize="16"
+                                       TextColor="#2C3E50"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="FillAndExpand" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+
+                </StackLayout>
+
+            </Frame>
+
+            <!-- Estado de cuenta y acciones -->
+            <Frame BackgroundColor="White"
+                   CornerRadius="20"
+                   HasShadow="True"
+                   Padding="25"
+                   Margin="0,5">
+
+                <StackLayout Spacing="20">
+
+                    <!-- Estado de verificación -->
+                    <Frame BackgroundColor="#D4EDDA"
+                           BorderColor="#27AE60"
+                           
+                           CornerRadius="12"
+                           Padding="15"
+                           HasShadow="False"
+                           Margin="0,0,0,10">
+                        <StackLayout Orientation="Horizontal" Spacing="12">
+                            <Label Text="✅"
+                                   FontSize="20"
+                                   VerticalOptions="Center" />
+                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="2">
+                                <Label Text="Cuenta Verificada"
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       TextColor="#155724" />
+                                <Label Text="Tu cuenta ha sido verificada exitosamente"
+                                       FontSize="13"
+                                       TextColor="#155724" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Acciones rápidas -->
+                    <StackLayout Spacing="12">
+                        <Label Text="Acciones de cuenta" 
+                               FontSize="16" 
+                               FontAttributes="Bold"
+                               TextColor="#34495E"
+                               Margin="0,5,0,5" />
+
+                        <!-- Botón Editar Perfil (opcional - puedes eliminarlo si no lo necesitas) -->
+                        <!--<Button Text="📝  Editar información"
+                                BackgroundColor="Transparent"
+                                TextColor="#3498DB"
+                                FontSize="15"
+                                FontAttributes="Bold"
+                                BorderColor="#3498DB"
+                                BorderWidth="2"
+                                CornerRadius="12"
+                                HeightRequest="45"
+                                Margin="0,0,0,5" />-->
+
+                        <!-- Botón Cerrar Sesión -->
+                        <Button Text="🚪  Cerrar Sesión"
+                                Clicked="OnCerrarSesionClicked"
+                                BackgroundColor="#E74C3C"
+                                TextColor="White"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                CornerRadius="12"
+                                HeightRequest="50"
+                                Margin="0,10,0,0" />
+                    </StackLayout>
+
+                </StackLayout>
+
+            </Frame>
+
+            <!-- Footer con información adicional -->
+            <StackLayout Spacing="10" Margin="0,20,0,30">
+                <Label Text="Aplicación segura con autenticación 2FA"
+                       FontSize="13"
+                       TextColor="#95A5A6"
+                       HorizontalOptions="Center" />
+                <Label Text="Tu información está protegida"
+                       FontSize="12"
+                       TextColor="#BDC3C7"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

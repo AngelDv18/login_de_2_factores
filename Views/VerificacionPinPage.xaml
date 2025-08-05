@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="login2fa.Views.VerificacionPinPage"
+             Title="Verificar Código"
+             BackgroundColor="#F8F9FA">
+
+    <ScrollView>
+        <Grid RowDefinitions="*, Auto, *" Padding="30,20">
+
+            <!-- Espaciador superior -->
+            <BoxView Grid.Row="0" />
+
+            <!-- Contenedor principal del formulario -->
+            <Frame Grid.Row="1" 
+                   BackgroundColor="White"
+                   CornerRadius="20"
+                   HasShadow="True"
+                   Padding="0"
+                   Margin="0,20">
+
+                <StackLayout Padding="30,40" Spacing="30">
+
+                    <!-- Icono de verificación -->
+                    <Frame BackgroundColor="#E8F5E8"
+                           CornerRadius="50"
+                           WidthRequest="100"
+                           HeightRequest="100"
+                           HorizontalOptions="Center"
+                           HasShadow="False"
+                           BorderColor="Transparent"
+                           Margin="0,0,0,10">
+                        <Label Text="🔐"
+                               FontSize="50"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                    </Frame>
+
+                    <!-- Título y descripción -->
+                    <StackLayout Spacing="12" Margin="0,0,0,10">
+                        <Label Text="Verificación de Seguridad" 
+                               FontSize="26" 
+                               FontAttributes="Bold"
+                               TextColor="#2C3E50"
+                               HorizontalOptions="Center" />
+                        <Label Text="Hemos enviado un código de verificación a tu correo electrónico. Ingrésalo a continuación para confirmar tu identidad." 
+                               FontSize="16"
+                               TextColor="#7F8C8D"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               LineBreakMode="WordWrap"
+                               Margin="10,0" />
+                    </StackLayout>
+
+                    <!-- Campo PIN -->
+                    <StackLayout Spacing="15">
+                        <Label Text="Código de verificación" 
+                               FontSize="16" 
+                               FontAttributes="Bold"
+                               TextColor="#34495E"
+                               HorizontalOptions="Center" />
+
+                        <Frame BackgroundColor="#F8F9FA" 
+                               CornerRadius="15" 
+                               Padding="0" 
+                               HasShadow="False"
+                               BorderColor="#E74C3C"
+                              
+                               Margin="20,0">
+                            <Entry Placeholder="000000" 
+                                   Text="{Binding PinIngresado}"
+                                   Keyboard="Numeric"
+                                   FontSize="24"
+                                   FontAttributes="Bold"
+                                   TextColor="#2C3E50"
+                                   PlaceholderColor="#BDC3C7"
+                                   BackgroundColor="Transparent"
+                                   HorizontalTextAlignment="Center"
+                                   MaxLength="6"
+                                   Margin="20,15" />
+                        </Frame>
+
+                        <!-- Información adicional -->
+                        <Label Text="Ingresa el código de 6 dígitos" 
+                               FontSize="14"
+                               TextColor="#95A5A6"
+                               HorizontalOptions="Center"
+                               Margin="0,5,0,0" />
+                    </StackLayout>
+
+                    <!-- Botones -->
+                    <StackLayout Spacing="15" Margin="0,20,0,0">
+
+                        <!-- Botón Confirmar -->
+                        <Button Text="Verificar Código" 
+                                Command="{Binding ConfirmarCommand}"
+                                BackgroundColor="#E74C3C"
+                                TextColor="White"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                CornerRadius="12"
+                                HeightRequest="50" />
+
+                        <!-- Separador con texto -->
+                        <StackLayout Orientation="Horizontal" 
+                                     HorizontalOptions="Center" 
+                                     Margin="0,15,0,10">
+                            <Label Text="¿No recibiste el código?" 
+                                   TextColor="#7F8C8D" 
+                                   FontSize="14"
+                                   VerticalOptions="Center" />
+                        </StackLayout>
+
+                        <!-- Botón Reenviar -->
+                        <Button Text="Reenviar Código" 
+                                Command="{Binding ReenviarCommand}"
+                                BackgroundColor="Transparent"
+                                TextColor="#3498DB"
+                                FontSize="15"
+                                FontAttributes="Bold"
+                                BorderColor="#3498DB"
+                                BorderWidth="2"
+                                CornerRadius="12"
+                                HeightRequest="45" />
+
+                    </StackLayout>
+
+                    <!-- Información de seguridad -->
+                    <Frame BackgroundColor="#FFF3CD"
+                           BorderColor="#F0C674"
+                           CornerRadius="10"
+                           Padding="15"
+                           HasShadow="False"
+                           Margin="0,20,0,0">
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Label Text="💡"
+                                   FontSize="18"
+                                   VerticalOptions="Start" />
+                            <Label Text="Por tu seguridad, este código expirará en 10 minutos. Si no lo recibes, revisa tu carpeta de spam."
+                                   FontSize="13"
+                                   TextColor="#856404"
+                                   LineBreakMode="WordWrap"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                    </Frame>
+
+                </StackLayout>
+
+            </Frame>
+
+            <!-- Espaciador inferior -->
+            <BoxView Grid.Row="2" />
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

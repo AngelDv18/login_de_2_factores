@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="login2fa.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:login2fa.Views"
+    FlyoutBehavior="Disabled">
+
+    <ShellContent Route="login" ContentTemplate="{DataTemplate views:LoginPage}" />
+    <ShellContent Route="registro" ContentTemplate="{DataTemplate views:RegistroPage}" />
+    <ShellContent Route="verificar" ContentTemplate="{DataTemplate views:VerificacionPinPage}" />
+    <ShellContent Route="perfil" ContentTemplate="{DataTemplate views:PerfilPage}" />
+
+</Shell>
+

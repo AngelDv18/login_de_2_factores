@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="login2fa.Views.RegistroPage"
+             Title="Registro"
+             BackgroundColor="#F8F9FA">
+
+    <ScrollView>
+        <Grid RowDefinitions="Auto, *, Auto" Padding="30,20">
+
+            <!-- Espaciador superior -->
+            <BoxView Grid.Row="0" HeightRequest="20" />
+
+            <!-- Contenedor principal del formulario -->
+            <Frame Grid.Row="1" 
+                   BackgroundColor="White"
+                   CornerRadius="20"
+                   HasShadow="True"
+                   Padding="0"
+                   Margin="0,10">
+
+                <StackLayout Padding="30,30" Spacing="20">
+
+                    <!-- Título y subtítulo -->
+                    <StackLayout Spacing="8" Margin="0,0,0,20">
+                        <Label Text="Crear Cuenta" 
+                               FontSize="28" 
+                               FontAttributes="Bold"
+                               TextColor="#2C3E50"
+                               HorizontalOptions="Center" />
+                        <Label Text="Completa tus datos para registrarte" 
+                               FontSize="16"
+                               TextColor="#7F8C8D"
+                               HorizontalOptions="Center" />
+                    </StackLayout>
+
+                    <!-- Sección Datos de Usuario -->
+                    <StackLayout Spacing="15">
+                        <Label Text="Información de la cuenta" 
+                               FontSize="18" 
+                               FontAttributes="Bold"
+                               TextColor="#34495E"
+                               Margin="0,10,0,5" />
+
+                        <!-- Campo Usuario -->
+                        <StackLayout Spacing="6">
+                            <Label Text="Nombre de usuario" 
+                                   FontSize="14" 
+                                   FontAttributes="Bold"
+                                   TextColor="#34495E" />
+                            <Frame BackgroundColor="#F8F9FA" 
+                                   CornerRadius="12" 
+                                   Padding="0" 
+                                   HasShadow="False"
+                                   BorderColor="Transparent">
+                                <Entry Placeholder="Elige tu nombre de usuario" 
+                                       Text="{Binding Usuario.UsuarioNombre}"
+                                       FontSize="16"
+                                       TextColor="#2C3E50"
+                                       PlaceholderColor="#BDC3C7"
+                                       BackgroundColor="Transparent"
+                                       Margin="15,12" />
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- Campo Correo -->
+                        <StackLayout Spacing="6">
+                            <Label Text="Correo electrónico" 
+                                   FontSize="14" 
+                                   FontAttributes="Bold"
+                                   TextColor="#34495E" />
+                            <Frame BackgroundColor="#F8F9FA" 
+                                   CornerRadius="12" 
+                                   Padding="0" 
+                                   HasShadow="False"
+                                   BorderColor="Transparent">
+                                <Entry Placeholder="tu@ejemplo.com" 
+                                       Text="{Binding Usuario.Email}"
+                                       Keyboard="Email"
+                                       FontSize="16"
+                                       TextColor="#2C3E50"
+                                       PlaceholderColor="#BDC3C7"
+                                       BackgroundColor="Transparent"
+                                       Margin="15,12" />
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- Campo Contraseña -->
+                        <StackLayout Spacing="6">
+                            <Label Text="Contraseña" 
+                                   FontSize="14" 
+                                   FontAttributes="Bold"
+                                   TextColor="#34495E" />
+                            <Frame BackgroundColor="#F8F9FA" 
+                                   CornerRadius="12" 
+                                   Padding="0" 
+                                   HasShadow="False"
+                                   BorderColor="Transparent">
+                                <Entry Placeholder="Crea una contraseña segura" 
+                                       IsPassword="True" 
+                                       Text="{Binding Usuario.Contrasena}"
+                                       FontSize="16"
+                                       TextColor="#2C3E50"
+                                       PlaceholderColor="#BDC3C7"
+                                       BackgroundColor="Transparent"
+                                       Margin="15,12" />
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <!-- Separador visual -->
+                    <BoxView BackgroundColor="#E0E0E0" 
+                             HeightRequest="1" 
+                             Margin="0,15" />
+
+                    <!-- Sección Datos Personales -->
+                    <StackLayout Spacing="15">
+                        <Label Text="Información personal" 
+                               FontSize="18" 
+                               FontAttributes="Bold"
+                               TextColor="#34495E"
+                               Margin="0,5,0,5" />
+
+                        <!-- Campos Nombre y Apellido en fila -->
+                        <Grid ColumnDefinitions="*, 10, *">
+                            <!-- Campo Nombre -->
+                            <StackLayout Grid.Column="0" Spacing="6">
+                                <Label Text="Nombre" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold"
+                                       TextColor="#34495E" />
+                                <Frame BackgroundColor="#F8F9FA" 
+                                       CornerRadius="12" 
+                                       Padding="0" 
+                                       HasShadow="False"
+                                       BorderColor="Transparent">
+                                    <Entry Placeholder="Tu nombre" 
+                                           Text="{Binding Usuario.Nombre}"
+                                           FontSize="16"
+                                           TextColor="#2C3E50"
+                                           PlaceholderColor="#BDC3C7"
+                                           BackgroundColor="Transparent"
+                                           Margin="15,12" />
+                                </Frame>
+                            </StackLayout>
+
+                            <!-- Campo Apellido -->
+                            <StackLayout Grid.Column="2" Spacing="6">
+                                <Label Text="Apellido" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold"
+                                       TextColor="#34495E" />
+                                <Frame BackgroundColor="#F8F9FA" 
+                                       CornerRadius="12" 
+                                       Padding="0" 
+                                       HasShadow="False"
+                                       BorderColor="Transparent">
+                                    <Entry Placeholder="Tu apellido" 
+                                           Text="{Binding Usuario.Apellido}"
+                                           FontSize="16"
+                                           TextColor="#2C3E50"
+                                           PlaceholderColor="#BDC3C7"
+                                           BackgroundColor="Transparent"
+                                           Margin="15,12" />
+                                </Frame>
+                            </StackLayout>
+                        </Grid>
+
+                        <!-- Campo Teléfono -->
+                        <StackLayout Spacing="6">
+                            <Label Text="Teléfono" 
+                                   FontSize="14" 
+                                   FontAttributes="Bold"
+                                   TextColor="#34495E" />
+                            <Frame BackgroundColor="#F8F9FA" 
+                                   CornerRadius="12" 
+                                   Padding="0" 
+                                   HasShadow="False"
+                                   BorderColor="Transparent">
+                                <Entry Placeholder="+52 999 123 4567" 
+                                       Text="{Binding Usuario.Telefono}"
+                                       Keyboard="Telephone"
+                                       FontSize="16"
+                                       TextColor="#2C3E50"
+                                       PlaceholderColor="#BDC3C7"
+                                       BackgroundColor="Transparent"
+                                       Margin="15,12" />
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <!-- Botones -->
+                    <StackLayout Spacing="12" Margin="0,25,0,10">
+
+                        <!-- Botón Registrarse -->
+                        <Button Text="Crear mi cuenta" 
+                                Command="{Binding RegistrarCommand}"
+                                BackgroundColor="#27AE60"
+                                TextColor="White"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                CornerRadius="12"
+                                HeightRequest="50" />
+
+                        <!-- Botón Volver al login -->
+                        <Button Text="Ya tengo cuenta, iniciar sesión"
+                                Clicked="OnVolverLoginClicked"
+                                BackgroundColor="Transparent"
+                                TextColor="#7F8C8D"
+                                FontSize="14"
+                                FontAttributes="Bold"
+                                BorderColor="#BDC3C7"
+                                BorderWidth="1"
+                                CornerRadius="12"
+                                HeightRequest="45"
+                                Margin="0,5,0,0" />
+
+                    </StackLayout>
+
+                </StackLayout>
+
+            </Frame>
+
+            <!-- Espaciador inferior -->
+            <BoxView Grid.Row="2" HeightRequest="20" />
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
