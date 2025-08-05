@@ -27,14 +27,13 @@ Solo después de validar este segundo paso, el usuario es redirigido a su perfil
 - Destino: **Android**
 - Backend/API: Local o remoto con soporte de envío de correos
 - Sistema de envío de correos: SMTP (Gmail recomendado)
-- Base de datos: MySQL (puede ser adaptada)
+- Base de datos: MySQL
 
 ## Estructura General
 
 - `/Views`: Interfaces de Login, Verificación, Perfil
 - `/Services`: Lógica para envío de correos y autenticación
 - `/Models`: Modelo de usuario
-- `/Backend`: (opcional) API para gestionar usuarios, códigos y verificación
 
 ## Flujo de Autenticación
 
@@ -50,7 +49,7 @@ Solo después de validar este segundo paso, el usuario es redirigido a su perfil
 - El código 2FA tiene tiempo de expiración.
 - Se bloquea el acceso tras múltiples intentos fallidos.
 
-## 👤 Autor
+## Autor
 
-Desarrollado por: **AngelDv**  
+Desarrollado por: **Angel David Garcia Garcia**  
 GitHub: [https://github.com/AngelDv18](https://github.com/AngelDv18)
